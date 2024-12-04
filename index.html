@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        </ul>
+            <ul class="scoreboard">
+                <li class="gamename">
+                    <p>ROCK</p>
+                    <p>PAPER</p>
+                    <p>SCISSORS</p>
+                </li>
+                <li>
+                    <ul class="score">
+                        <li class="box">
+                            <p>COMPUTER</p>
+                            <p>SCORE</p>
+                            <h1 id="comp-score">0</h1>
+                        </li>
+                        <li class="box">
+                            <p>YOUR</p>
+                            <p>SCORE</p>
+                            <h1 id="user-score">0</h1>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        
+    </div>
+
+    <div class="choices" >
+        <div class="row1">
+            <div class="choice" id="rock">
+                <img src="./images/rock.png">
+            </div>
+            
+            <div class="choice" id="scissors">
+                <img src="./images/scissor.png">        
+            </div>
+        </div>
+        
+        <div class="choice row2" id="paper">
+            <img src="./images/paper.png">
+        </div>
+        
+    </div>
+
+    <div class="line">
+        <img class="line1" src="./images/line1.png">
+        <img class="line2" src="./images/line2.png">
+        <img class="line3" src="./images/line3.png">
+    </div>
+
+    <div class="selected" id="selected">
+        <div class="user-choice">
+            <P class="pick">YOU PICKED</P>
+            <div  class="choice userborder">
+                <img id="user-pick" src="./images/rock.png">
+            </div>
+        </div>
+        <div class="win-lose">
+            <div class="msg">
+                <h1>YOU WIN</h1>
+                <h2>AGAINST PC</h2>
+            </div>
+            <button class="play"><span>PLAY AGAIN</span></button>
+        </div>
+        <div class="comp-choice">
+            <P class="pick">PC PICKED</P>
+            <div class="choice compborder">
+                <img id="comp-pick" src="./images/paper.png"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="rules"><span>RULES</span></button>
+        <button class="next" style="display: none;"><span>NEXT</span></button>
+    </div>
+    
+    <div class="rulebox-container">
+    <div class="rule-box">
+        <button class="close-btn">&times;</button>
+        <div class="rule-content">
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Rock beats scissors, scissors beats paper and paper beats rock.</li>
+                <li>Agree ahead of time whether you'll count off "rock, paper, scissors, shoot" or just "rock, paper, scissors"</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="hurray-page">
+        <div class="hurray-content">
+            <div class="img-container">
+                <img class="sm1" src="./images/starsm.png">
+                <img class="sm2" src="./images/starsm.png">
+                <img class="sm3" src="./images/starsm.png">
+                <img class="sm4" src="./images/starsm.png">
+                <img class="m" src="./images/star.png">
+                <img class="x1" src="./images/star.png">
+                <img class="x2" src="./images/star.png">
+                <img class="xx1" src="./images/star.png">
+                <img class="cup" src="./images/cup.png">
+            </div>
+            <div class="hurray-text">
+                <h1>HURRAY!!</h1>
+                <h2>YOU WON THE GAME</h2>
+            </div>
+            <button class="play"><span>PLAY AGAIN</span></button>
+        </div>
+        <button id="rules" class="rules"><span>RULES</span></button>
+    </div>
+    
+ 
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,572 @@
+
+    
+    html{
+        background-color: #89C15E;
+        cursor: pointer;
+    }
+
+    .scoreboard{
+        margin-top: 60px;
+        list-style: none;
+        border: solid 2px #fff ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50vw;
+        border-radius: 20px;
+        padding: 15px;
+        margin-left: 25%;
+        background-color: transparent;
+    }
+
+    .scoreboard:hover:not(:has(.gamename:hover, .box:hover)) {
+    border-color: #0074B6;
+    }
+
+    .scoreboard li{
+        list-style: none;
+        transition: text-decoration 0.3s ease;
+    }
+
+    .score{
+        display: flex;
+        gap: 50px;
+        align-items: center;
+    }
+
+    #comp-score , #user-score{
+        font-size: 70px;
+        font-weight: bolder;
+    }
+
+    .gamename p{
+        margin: 0;
+    }
+
+    .gamename p:hover{
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .gamename{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 35px;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+
+    .box p{
+        margin: 0;
+        font-size: 15px;
+        color: #6b6b6b;
+        font-weight: bold;
+    }
+
+    .box p:hover{
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .box h1{
+        margin: 0;
+    }
+
+    .box h1:hover{
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .box{
+        height: 100px;
+        width: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+
+    .box:hover {
+        border: solid 3px #0074B6;
+    }
+
+    .box:hover:has(p:hover, h1:hover) {
+        border: solid 3px #FFFFFF; 
+    }
+
+    .choices{
+        margin-top: 70px;
+    }
+
+    .choice{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        border: solid 15px #0074B6;
+        position: relative;
+        z-index: 101;
+    }
+
+    .userborder,.compborder{
+        height: 125px;
+        width: 125px;
+    }
+
+    .line1{
+        position: absolute;
+        top: 360px;
+        left: 650px;
+        width: 120px;
+        z-index: 100;
+    }
+
+    .line2{
+        position: absolute;
+        top: 420px;
+        left: 730px;
+        width: 60px;
+        z-index: 100;
+    }
+
+    .line3{
+        position: absolute;
+        top: 420px;
+        left: 630px;
+        width: 60px;
+        z-index: 100;
+    }
+
+    .choice:hover::before{
+        border-color: #0074B6;;
+    }
+
+    .choice img{
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    } 
+
+    .choice img:hover{
+        border: solid 3px #0074B6;
+    }
+
+    #scissors img{
+        height: 55px;
+        width: 40px;
+    }
+
+    .row1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .row2{
+        margin-left: 45%;
+        margin-top: 50px;
+    }
+
+    #rock{
+        border: solid 15px #0074B6;
+    }
+
+    #scissors{
+        border: solid 15px #BD00FF;
+    }
+
+    #paper{
+        border: solid 15px #FFA943;
+    }
+
+    .rules, .next{
+        height: 40px;
+        width: 100px;
+        border: solid 2px #FFF;
+        background-color: #89C15E;
+        border-radius: 10px;
+        margin: 10px;
+        color: #FFF;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+
+    .rules:hover, .next:hover {
+        border: solid 3px #0074B6;
+        }
+
+
+    .rules:hover:has(span:hover) {
+        border: solid 3px #FFFFFF;
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .next:hover:has(span:hover) {
+        border: solid 3px #FFFFFF;
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+    
+    .button-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        right: 20px;
+        bottom: 10px;
+    }
+    
+    .rules{
+        display: inline-block;
+        order: 1;
+    }
+
+    #rules{
+        position: fixed;
+        right: 20px;
+        bottom: 10px;
+    }
+
+    .next{
+        display: none;
+        order: 2;
+    }
+
+    .selected{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: 200px;
+        color: #FFFFFF;
+        margin-top: 80px;
+    }
+
+    .user-choice,.comp-choice{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    } 
+
+    .win-lose{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    } 
+
+    .win-lose h1{
+        font-size: 40px;
+        font: bold;
+        color: #FFFFFF;
+        margin: 0;
+    }
+
+    .win-lose h2{
+        margin: 0;
+    }
+
+    .win-lose h1:hover, h2:hover{
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .play{
+        height: 50px;
+        width: 150px;
+        border: solid 2px #FFFFFF;
+        border-radius: 10px;
+        background-color: #FFFFFF;
+        font-size: 15px;
+        padding: 10px;
+        font: bold;
+        color: #777676;
+        cursor: pointer;
+    }
+
+    .play:hover{
+        border: solid 3px #0074B6;
+    }
+
+    .play:hover:has(span:hover) {
+        border: solid 3px #FFFFFF;
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    @keyframes ellipseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    }
+
+    .winner-glow {
+        position: relative;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .winner-glow::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        left: -80px;
+        right: -80px;
+        bottom: -80px;
+        border-radius: 50%;
+        border: 26px solid rgba(46, 154, 37, 0.3);
+        animation: ellipseGlow 2s infinite;
+        z-index: -3;
+    }
+
+    .winner-glow::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        left: -60px;
+        right: -60px;
+        bottom: -60px;
+        border-radius: 50%;
+        border: 26px solid rgba(46, 154, 37, 0.6);
+        animation: ellipseGlow 2s infinite;
+        z-index: -2;
+    }
+
+    .winner-glow-inner {
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        right: -40px;
+        bottom: -40px;
+        border-radius: 50%;
+        border: 26px solid #2E9A25;
+        animation: ellipseGlow 2s infinite;
+        z-index: -1;
+    }
+
+    .pick{
+        z-index: 100;
+    }
+
+    .pick:hover{
+        text-decoration: underline;
+        text-decoration-color: #0074B6;
+        text-decoration-thickness: 3px;
+    }
+
+    .rule-box{
+        display: none;
+        width: 250px;
+        height: 320px;
+        border: solid 5px #fff;
+        background-color:#004429;
+        padding: 5px;
+        border-radius: 10px;
+        position: fixed;
+        top: 38%;
+        left: 78%;
+        z-index: 1000;
+    }
+
+    .rule-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .rule-content ul{
+        list-style-type: square;
+    }
+
+    .rule-content ul li::marker {
+    color: yellow;
+    font-size: 20px;
+    }
+
+    .rule-content h2{
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .close-btn{
+        background-color: red;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        color: #fff;
+        font-size: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+
+    .hurray-page{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #89C15E;
+    }
+
+    .hurray-content{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        color: #fff;
+    }
+
+    .hurray-text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hurray-content h1,h2 {
+        margin: 0;
+    }
+
+    .hurray-text h1:hover,h2:hover{
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #0074B6;
+    }
+
+    .hurray-page h1{
+        font-size: 90px;
+    }
+
+    .hurray-page h2{
+        font-size: 40px ;
+    }
+
+    .img-container{
+        position: relative;
+        margin-top: 20px;
+        margin-left: 0px;
+        height: 300px;
+        width: 550px;
+    }
+
+    .img-container:hover{
+        border: solid 3px #0074B6;
+    }
+
+    .sm1{
+        position: absolute;
+        top: 0px;
+        left: 120px;
+        height: 32px;
+        width: 32px;
+    }
+
+    .sm2{
+        position: absolute;
+        top: 50px;
+        left: 250px;
+        height: 32px;
+        width: 32px;
+    }
+
+    .sm3{
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        top: 80px;
+        right: 20px;
+    }
+
+    .sm4{
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        bottom: 5px;
+        left: 100px;
+    }
+
+    .m{
+        position: absolute;
+        height: 68px;
+        width: 68px;
+        left: 70px;
+        top: 40px;
+    }
+
+    .x1{
+        position: absolute;
+        height: 115px;
+        width: 115px;
+        left: 0;
+        top: 100px;
+    }
+    .x2{
+        position: absolute;
+        height: 103px;
+        width: 103px;
+        top: 0;
+        left: 350px;
+    }
+
+    .xx1{
+        position: absolute;
+        bottom: 20px;
+        right: 5px;
+        height: 130px;
+        width: 130px;
+    }
+
+    .cup{
+        position: absolute;
+        bottom: -10px;
+        left: 200px;
+        height: 201px;
+        width: 200px;
+    }
+
+    .cup:hover{
+        border: solid 3px #0074B6;
+    }
